@@ -33,10 +33,16 @@ public class AimTrainer {
     // the thingy I need for some reason that wont work if its named anything else, Ion know i didnt read the documentation
     @FXML
     public void initialize() {
+        // time limit spinner
         tlimit.setValueFactory(
                 new SpinnerValueFactory.IntegerSpinnerValueFactory(10, 60, 30)
         );
+
+        // set ColorPicker defaults here (avoid strings in FXML)
+        tcolor.setValue(javafx.scene.paint.Color.LIME);
+        bcolor.setValue(javafx.scene.paint.Color.WHITE);
     }
+
 
 
     // Start button jawn

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.171"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.testfx.AimTrainer">
+
+    <center>
+        <VBox spacing="25" alignment="CENTER">
+
+            <!-- Title -->
+            <VBox alignment="CENTER">
+                <Label text="Welcome to" style="-fx-font-size: 24;"/>
+                <HBox alignment="CENTER" spacing="5">
+                    <Label text="AimTrainer" style="-fx-font-size: 60; -fx-font-weight: bold;"/>
+                    <Label text="v1 alpha" style="-fx-font-size: 14;"/>
+                </HBox>
+            </VBox>
+
+            <!-- Controls -->
+            <GridPane hgap="40" vgap="20" alignment="CENTER">
+                <columnConstraints>
+                    <ColumnConstraints halignment="CENTER"/>
+                    <ColumnConstraints halignment="CENTER"/>
+                    <ColumnConstraints halignment="CENTER"/>
+                </columnConstraints>
+
+                <!-- Target Size -->
+                <VBox alignment="CENTER">
+                    <Label text="Target Size"/>
+                    <Slider fx:id="tsize" min="10" max="30" value="30" showTickMarks="true" showTickLabels="true"/>
+                </VBox>
+
+                <!-- Target Color -->
+                <VBox alignment="CENTER" GridPane.columnIndex="1">
+                    <Label text="Target Color"/>
+                    <!-- don't set a color string here -->
+                    <ColorPicker fx:id="tcolor"/>
+                </VBox>
+
+                <!-- Background Color -->
+                <VBox alignment="CENTER" GridPane.columnIndex="2">
+                    <Label text="Background Color"/>
+                    <!-- don't set a color string here -->
+                    <ColorPicker fx:id="bcolor"/>
+                </VBox>
+
+                <!-- Target Speed -->
+                <VBox alignment="CENTER" GridPane.rowIndex="1">
+                    <Label text="Target Speed"/>
+                    <Slider fx:id="tspeed" min="1" max="3" value="1" showTickMarks="true" showTickLabels="true"/>
+                </VBox>
+
+                <!-- Time Limit -->
+                <VBox alignment="CENTER" GridPane.rowIndex="1" GridPane.columnIndex="1">
+                    <Label text="Time Limit"/>
+                    <Spinner fx:id="tlimit" prefWidth="100"/>
+                </VBox>
+
+                <!-- Moving Targets -->
+                <VBox alignment="CENTER" GridPane.rowIndex="1" GridPane.columnIndex="2">
+                    <Label text=" "/>
+                    <CheckBox fx:id="tmove" text="Moving Targets ?"/>
+                </VBox>
+            </GridPane>
+
+            <!-- Start Button -->
+            <Button fx:id="start" text="Start Game" onAction="#startg" style="-fx-font-size: 14;" />
+        </VBox>
+    </center>
+</BorderPane>
